@@ -10,6 +10,7 @@
     "object-shorthand": "off",
     "class-methods-use-this": "off",
     "react/prop-types": 0,
-    "arrow-parens": 0
+    "arrow-parens": 0,
+    "no-undef": "off"
   }
 }

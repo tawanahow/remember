@@ -24,6 +24,12 @@ body {
   height: calc(25% - 20px);
   margin: 5px;
   position: relative;
+  transform: scale(1);
+}
+
+.board-passport:active {
+  transform: scale(0.8);
+  transition: transform 0.2s;
 }
 
 .front,
