@@ -7,6 +7,7 @@ let secondPassport;
 
 function flipPassport() {
   if (freezeBoard) return;
+  if (this === firstPassport) return;
   this.classList.add('flip');
 
   if (!hasFlippedPassport) {
@@ -30,6 +31,8 @@ function checkMatch() {
 function disablePassports() {
   firstPassport.removeEventListener('click', flipPassport);
   secondPassport.removeEventListener('click', flipPassport);
+
+  resetBoard();
 }
 
 function unflipPassports() {
@@ -41,6 +44,11 @@ function unflipPassports() {
 
     freezeBoard = false;
   }, 1500);
+}
+
+function resetBoard() {
+  [hasFlippedPassport, freezeBoard] = [false, false];
+  [firstPassport, secondPassport] = [null, null];
 }
 
 passports.forEach((passport) =>
