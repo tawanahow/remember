@@ -51,6 +51,13 @@ function resetBoard() {
   [firstPassport, secondPassport] = [null, null];
 }
 
+(function shufflePassports() {
+  passports.forEach((passport) => {
+    const randomNumber = Math.floor(Math.random() * 20);
+    passport.style.order = randomNumber;
+  });
+})();
+
 passports.forEach((passport) =>
   passport.addEventListener('click', flipPassport)
 );
