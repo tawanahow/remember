@@ -11,6 +11,8 @@
     "class-methods-use-this": "off",
     "react/prop-types": 0,
     "arrow-parens": 0,
-    "no-undef": "off"
+    "no-undef": "off",
+    "no-use-before-define": "off",
+    "no-unused-expressions": "off"
   }
 }

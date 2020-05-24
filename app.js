@@ -1,35 +1,46 @@
 const passports = document.querySelectorAll('.board-passport');
 
 let hasFlippedPassport = false;
+let freezeBoard = false;
 let firstPassport;
 let secondPassport;
 
 function flipPassport() {
+  if (freezeBoard) return;
   this.classList.add('flip');
 
   if (!hasFlippedPassport) {
-    // first click
     hasFlippedPassport = true;
     firstPassport = this;
-  } else {
-    hasFlippedPassport = false;
-    secondPassport = this;
-    // console.log({ firstPassport, secondPassport });
-
-    // console.log(firstPassport.dataset.city);
-    // console.log(secondPassport.dataset.city);
-
-    if (firstPassport.dataset.city === secondPassport.dataset.city) {
-      firstPassport.removeEventListener('click', flipPassport);
-      secondPassport.removeEventListener('click', flipPassport);
-    } else {
-      setTimeout(() => {
-        firstPassport.classList.remove('flip');
-        secondPassport.classList.remove('flip');
-      }, 1500);
-    }
-    console.log('it worked');
+    return;
   }
+
+  hasFlippedPassport = false;
+  secondPassport = this;
+
+  checkMatch();
+}
+
+function checkMatch() {
+  const aMatch = firstPassport.dataset.city === secondPassport.dataset.city;
+
+  aMatch ? disablePassports() : unflipPassports();
+}
+
+function disablePassports() {
+  firstPassport.removeEventListener('click', flipPassport);
+  secondPassport.removeEventListener('click', flipPassport);
+}
+
+function unflipPassports() {
+  freezeBoard = true;
+  setTimeout(() => {
+    freezeBoard = true;
+    firstPassport.classList.remove('flip');
+    secondPassport.classList.remove('flip');
+
+    freezeBoard = false;
+  }, 1500);
 }
 
 passports.forEach((passport) =>
