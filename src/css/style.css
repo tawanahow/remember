@@ -53,3 +53,13 @@ body {
 .front {
   transform: rotateY(180deg);
 }
+
+.restart {
+  max-width: 50%;
+  margin: 1.5em auto;
+  text-align: center;
+}
+
+.reset-button {
+  padding: 0.7em 1.4em;
+}
