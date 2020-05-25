@@ -62,7 +62,7 @@ window.onload = function () {
   setTimeout(function () {
     shufflePassports();
   }, 800);
-  console.log(shufflePassports);
+  // console.log(shufflePassports);
 };
 
 passports.forEach((passport) =>

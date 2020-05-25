@@ -2,12 +2,25 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
   height: 100vh;
   display: flex;
-  background-color: #e7be28;
+}
+
+.game {
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  color: #0a5d9e;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
 }
 
 .board {
@@ -16,8 +29,8 @@ body {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid blue;
   perspective: 1000px;
+  background-color: #e7be28;
 }
 
 .board-passport {
@@ -54,12 +67,14 @@ body {
   transform: rotateY(180deg);
 }
 
-.restart {
-  max-width: 50%;
-  margin: 1.5em auto;
-  text-align: center;
-}
-
 .reset-button {
-  padding: 0.7em 1.4em;
+  background-color: #4caf50;
+  border: none;
+  font-size: 16px;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 8px;
+  cursor: pointer;
 }
