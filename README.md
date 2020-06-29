@@ -2,7 +2,8 @@
 
 # Remember Travel?
 
-A travel themed memory card game
+A travel themed memory card game.
+Play it here https://remember-travel.netlify.app/
 
 ## How to Play
 
@@ -13,5 +14,3 @@ If the cards don't match, they will flip over.
 If they do match, then the city or country view of the card will remain visible, until all matches have been made.
 
 Select PLAY AGAIN to reset the board.
-
-Play it here https://remember-travel.netlify.app/
